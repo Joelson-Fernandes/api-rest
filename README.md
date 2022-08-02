@@ -1,4 +1,4 @@
-<h1 align="center">API-rest</h1>
+<h1 align="center">API-rest 👨🏻‍💻</h1>
 
 > Uma API REST simples para consumo de dados
 
@@ -60,7 +60,7 @@ Os dados de usuário e senha dos arquivos de seed são:
 
 Você pode obter o token JWT na rota `/token`, passando os dados JSON:
 
-```
+```json
 {
 	"email": "admin@teste.com",
 	"password": "123456"
@@ -70,6 +70,50 @@ Você pode obter o token JWT na rota `/token`, passando os dados JSON:
 Headers
 ```
 Content-Type	application/json; charset=utf-8
+```
+
+## 📲 Exemplos de retorno:
+alunos:
+```json
+[
+	{
+		"id": 8,
+		"nome": "Joelson",
+		"sobrenome": "fernandes",
+		"email": "joelson@teste.com",
+		"idade": 30,
+		"peso": 90.2,
+		"altura": 1.85,
+		"Fotos": [
+			{
+				"url": "http://localhost:3000/images/1658767215401_14424.jpg",
+				"originalname": "p2.jpg",
+				"filename": "1658767215401_14424.jpg"
+			}
+		]
+	},
+]
+```
+users:
+```json
+[
+	{
+		"id": 1,
+		"nome": "admin",
+		"email": "admin@teste.com"
+	}
+]
+```
+token:
+```json
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkB0ZXN0ZS5jb20iLCJpYXQiOjE2NTk0NDIyODQsImV4cCI6MTY2MDA0NzA4NH0.PhvrARIzuUPUa5mNf8WhCZqSd3UkiIRcuRZ7CBm0_Mg",
+	"user": {
+		"nome": "admin",
+		"id": 1,
+		"email": "admin@teste.com"
+	}
+}
 ```
 
 Teste e aproveite! 😅
