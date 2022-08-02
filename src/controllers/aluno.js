@@ -12,9 +12,9 @@ class AlunoController {
           attributes: ['url', 'originalname', 'filename'],
         },
       });
-      res.json(alunos);
+      return res.json(alunos);
     } catch (e) {
-      res.json({
+      return res.status(400).json({
         errors: e.errors.map((err) => err.message),
       });
     }
@@ -48,7 +48,7 @@ class AlunoController {
 
       return res.json(aluno);
     } catch (e) {
-      return res.json({
+      return res.status(400).json({
         errors: e.errors.map((err) => err.message),
       });
     }
