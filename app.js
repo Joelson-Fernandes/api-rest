@@ -13,6 +13,8 @@ import aluno from './src/routes/aluno';
 import token from './src/routes/token';
 import foto from './src/routes/foto';
 
+// Lista com URLS que podem acessar API,
+// caso queira deixar aberta para qualquer URL use apenas use.cors()
 const whiteList = [
   'http://localhost:3000',
 ];
