@@ -26,7 +26,7 @@ Clone o projeto e execute o comando no diretório raiz:
 npm install 
 ```
 
-Renomeie `.env-example` para `.env` e configure com seu banco de dados.
+Configure o arquivo `.env` com seu banco de dados.
 Exemplo:
 ```
 DATABASE=nome da database
@@ -71,6 +71,8 @@ Headers
 ```
 Content-Type	application/json; charset=utf-8
 ```
+
+Teste a api [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=api-rest&uri=https%3A%2F%2Fraw.githubusercontent.com%2FJoelson-Fernandes%2Fapi-rest%2Fmain%2Finsomnia%2FInsomnia_2022-08-04.json)
 
 ## 📲 Exemplos de retorno:
 alunos:
