@@ -5,9 +5,9 @@ class UserController {
   async store(req, res) {
     try {
       const novoUser = await User.create(req.body);
-      return res.status(400).json(novoUser);
+      return res.json(novoUser);
     } catch (e) {
-      return res.json({
+      return res.status(400).json({
         errors: e.errors.map((err) => err.message),
       });
     }
@@ -30,7 +30,9 @@ class UserController {
       const { id, nome, email } = user;
       return res.json({ id, nome, email });
     } catch (e) {
-      return res.json(null);
+      return res.status(400).json({
+        errors: ['Usuário não existe'],
+      });
     }
   }
 
