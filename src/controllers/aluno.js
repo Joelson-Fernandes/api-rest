@@ -26,7 +26,7 @@ class AlunoController {
       const { id } = req.params;
 
       if (!id) {
-        return res.json({
+        return res.status(400).json({
           errors: 'Faltando ID',
         });
       }
@@ -41,7 +41,7 @@ class AlunoController {
       });
 
       if (!aluno) {
-        return res.json({
+        return res.status(400).json({
           errors: 'Aluno não existe',
         });
       }
@@ -60,7 +60,7 @@ class AlunoController {
       const novoAluno = await Aluno.create(req.body);
       return res.json(novoAluno);
     } catch (e) {
-      return res.json({
+      return res.status(400).json({
         errors: e.errors.map((err) => err.message),
       });
     }
@@ -72,7 +72,7 @@ class AlunoController {
       const { id } = req.params;
 
       if (!id) {
-        return res.json({
+        return res.status(400).json({
           errors: 'Faltando ID',
         });
       }
@@ -80,7 +80,7 @@ class AlunoController {
       const aluno = await Aluno.findByPk(id);
 
       if (!aluno) {
-        return res.json({
+        return res.status(400).json({
           errors: 'Aluno não existe',
         });
       }
@@ -88,7 +88,7 @@ class AlunoController {
       await aluno.destroy();
       return res.json({ mensagem: 'aluno deletado com sucesso!' });
     } catch (e) {
-      return res.json({
+      return res.status(400).json({
         errors: e.errors.map((err) => err.message),
       });
     }
@@ -100,7 +100,7 @@ class AlunoController {
       const { id } = req.params;
 
       if (!id) {
-        return res.json({
+        return res.status(400).json({
           errors: 'Faltando ID',
         });
       }
@@ -108,7 +108,7 @@ class AlunoController {
       const aluno = await Aluno.findByPk(id);
 
       if (!aluno) {
-        return res.json({
+        return res.status(400).json({
           errors: 'Aluno não existe',
         });
       }
@@ -116,7 +116,7 @@ class AlunoController {
       await aluno.update(req.body);
       return res.json(aluno);
     } catch (e) {
-      return res.json({
+      return res.status(400).json({
         errors: e.errors.map((err) => err.message),
       });
     }
